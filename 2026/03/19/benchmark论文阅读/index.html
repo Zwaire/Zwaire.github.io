@@ -22,25 +22,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zwaire.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="即使一无所有，也要无所畏惧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Aray&#39;s Blog">
-<meta property="og:url" content="https://zwaire.github.io/index.html">
+    <meta name="description" content="1、DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle【benchmark】 本文提出 DAComp，用于评测数据代理在企业级全生命周期数据智能中的能力，覆盖 DE（数据工程） 与 DA（数据分析） 两部分。它试图解决的核心问题是：现有 benchmark 多停留在单条 SQL、单脚本或封闭式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="benchmark论文阅读">
+<meta property="og:url" content="https://zwaire.github.io/2026/03/19/benchmark%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.html">
 <meta property="og:site_name" content="Aray&#39;s Blog">
-<meta property="og:description" content="即使一无所有，也要无所畏惧">
+<meta property="og:description" content="1、DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle【benchmark】 本文提出 DAComp，用于评测数据代理在企业级全生命周期数据智能中的能力，覆盖 DE（数据工程） 与 DA（数据分析） 两部分。它试图解决的核心问题是：现有 benchmark 多停留在单条 SQL、单脚本或封闭式">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-19T00:26:09.000Z">
+<meta property="article:modified_time" content="2026-03-19T00:27:47.180Z">
 <meta property="article:author" content="Aray">
 <meta property="article:tag" content="C, Cpp">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://zwaire.github.io/">
+<link rel="canonical" href="https://zwaire.github.io/2026/03/19/benchmark%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zwaire.github.io/2026/03/19/benchmark%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/","path":"2026/03/19/benchmark论文阅读/","title":"benchmark论文阅读"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Aray's Blog</title>
+<title>benchmark论文阅读 | Aray's Blog</title>
   
 
 
@@ -92,7 +94,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Aray's Blog</h1>
+      <p class="site-title">Aray's Blog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">ACM马上退役的老年选手</p>
@@ -119,7 +121,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -132,6 +134,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81DAComp-Benchmarking-Data-Agents-across-the-Full-Data-Intelligence-Lifecycle"><span class="nav-number">1.</span> <span class="nav-text">1、DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81DA-Code-Agent-Data-Science-Code-Generation-Benchmark-for-Large-Language-Models"><span class="nav-number">2.</span> <span class="nav-text">2、DA-Code: Agent Data Science Code Generation Benchmark for Large Language Models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81MLE-BENCH-EVALUATING-MACHINE-LEARNING-AGENTS-ON-MACHINE-LEARNING-ENGINEERING"><span class="nav-number">3.</span> <span class="nav-text">3、MLE-BENCH: EVALUATING MACHINE LEARNING  AGENTS ON MACHINE LEARNING ENGINEERING</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81PaperBench-Evaluating-AI%E2%80%99s-Ability-to-Replicate-AI-Research"><span class="nav-number">4.</span> <span class="nav-text">4、PaperBench: Evaluating AI’s Ability to Replicate AI Research</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81GDPVAL-EVALUATING-AI-MODEL-PERFORMANCE-ON-REAL-WORLD-ECONOMICALLY-VALUABLE-TASKS"><span class="nav-number">5.</span> <span class="nav-text">5、GDPVAL: EVALUATING AI MODEL PERFORMANCE  ON REAL-WORLD ECONOMICALLY VALUABLE TASKS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81AgentIF-OneDay-A-Task-level-Instruction-Following-Benchmark-for-General-AI-Agents-in-Daily-Scenarios"><span class="nav-number">6.</span> <span class="nav-text">6、AgentIF-OneDay: A Task-level Instruction-Following Benchmark for General AI Agents in Daily Scenarios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81RubricBench-Aligning-Model-Generated-Rubrics-with-Human-Standards"><span class="nav-number">7.</span> <span class="nav-text">7、RubricBench: Aligning Model-Generated Rubrics with Human Standards</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -179,16 +182,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zwaire.github.io/2026/03/19/benchmark%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -202,13 +206,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Aray's Blog">
+      <meta itemprop="name" content="benchmark论文阅读 | Aray's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/03/19/benchmark%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" class="post-title-link" itemprop="url">benchmark论文阅读</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          benchmark论文阅读
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -223,6 +227,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
@@ -246,8 +257,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
+    <div class="post-body" itemprop="articleBody"><span id="more"></span>
 
 <h2 id="1、DAComp-Benchmarking-Data-Agents-across-the-Full-Data-Intelligence-Lifecycle"><a href="#1、DAComp-Benchmarking-Data-Agents-across-the-Full-Data-Intelligence-Lifecycle" class="headerlink" title="1、DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle"></a>1、DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle</h2><p>【benchmark】</p>
 <p>本文提出 <strong>DAComp</strong>，用于评测数据代理在<strong>企业级全生命周期数据智能</strong>中的能力，覆盖 <strong>DE（数据工程）</strong> 与 <strong>DA（数据分析）</strong> 两部分。它试图解决的核心问题是：现有 benchmark 多停留在单条 SQL、单脚本或封闭式分析，<strong>高估了模型在真实企业数据工作流中的能力</strong>。这不是全新问题，但本文首次较系统地用 <strong>“设计—实现—演化—分析”</strong> 的一体化框架来评测。</p>
@@ -285,7 +295,6 @@
 <p>[Takeaways]<br>这篇论文最值得记的有三点。第一，<strong>评估系统的瓶颈已经从 judge inference 转到了 judge specification</strong>：模型能执行规则，不代表它能自己提出对的规则。第二，<strong>更多 test-time compute 不能自动补齐错误 rubric</strong>，多采样、多轮 refinement 对自生成 rubric 基本救不了场，说明问题不是“想得不够多”，而是“想偏了”。第三，<strong>高质量评估的关键不是更长的 checklist，而是更贴近人类意图的 checklist</strong>：模型很容易写出“高刚性、低必要性”的伪规则，看起来专业，实际上抓错重点；后续做 judge、RM、agent evaluator 时，最好把“标准生成”和“标准执行”拆开设计，而不是默认一步到位。</p>
 <p>[Limitations &amp; Directions]<br>局限性主要有四个：一是数据来自已有 benchmark 的再筛选，虽然难度提高了，但分布仍受原始数据源限制；二是人工 rubric 很贵，规模和覆盖面都有限，不容易无限扩展；三是即便给了正确的人类 rubric，模型也不能做到 100% 正确，说明 execution gap 依然存在；四是 rubric matching 和质量分析本身也依赖额外判别器，不是完全无噪声。未来最值得做的方向也很清楚：一是研究<strong>如何让模型学会生成更接近人类价值排序的 rubric</strong>，而不只是生成更长 checklist；二是研究<strong>硬约束&#x2F;软约束、规则权重、拒答语义</strong>这类更结构化的 rubric 表达；三是把 rubric generation、verification、decision 分成多模块优化；四是往更真实的 agent 任务、多轮交互、安全边界和行业场景里扩展，做真正能落地的 evaluator benchmark。</p>
 
-      
     </div>
 
     
@@ -293,929 +302,39 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zwaire.github.io/2026/03/19/20260319/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ren.jpg">
-      <meta itemprop="name" content="Aray">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aray's Blog">
-      <meta itemprop="description" content="即使一无所有，也要无所畏惧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Aray's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/03/19/20260319/" class="post-title-link" itemprop="url">20260319</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-03-19 08:25:47" itemprop="dateCreated datePublished" datetime="2026-03-19T08:25:47+08:00">2026-03-19</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>0</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
           
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Aray
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://zwaire.github.io/2026/03/19/benchmark%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" title="benchmark论文阅读">https://zwaire.github.io/2026/03/19/benchmark论文阅读/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zwaire.github.io/2026/03/16/20260316/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ren.jpg">
-      <meta itemprop="name" content="Aray">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aray's Blog">
-      <meta itemprop="description" content="即使一无所有，也要无所畏惧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Aray's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/03/16/20260316/" class="post-title-link" itemprop="url">20260316</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-03-16 14:22:41" itemprop="dateCreated datePublished" datetime="2026-03-16T14:22:41+08:00">2026-03-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-03-19 08:25:34" itemprop="dateModified" datetime="2026-03-19T08:25:34+08:00">2026-03-19</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>924</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>新的开始</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/03/16/20260316/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zwaire.github.io/2026/03/11/20260311/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ren.jpg">
-      <meta itemprop="name" content="Aray">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aray's Blog">
-      <meta itemprop="description" content="即使一无所有，也要无所畏惧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Aray's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/03/11/20260311/" class="post-title-link" itemprop="url">20260311</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2026-03-11 22:03:13 / 修改时间：22:07:42" itemprop="dateCreated datePublished" datetime="2026-03-11T22:03:13+08:00">2026-03-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>555</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>稍微活过来</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/03/11/20260311/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/03/19/20260319/" rel="prev" title="20260319">
+                  <i class="fa fa-angle-left"></i> 20260319
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zwaire.github.io/2026/03/10/20260310/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ren.jpg">
-      <meta itemprop="name" content="Aray">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aray's Blog">
-      <meta itemprop="description" content="即使一无所有，也要无所畏惧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Aray's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/03/10/20260310/" class="post-title-link" itemprop="url">20260310</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-03-10 23:36:22" itemprop="dateCreated datePublished" datetime="2026-03-10T23:36:22+08:00">2026-03-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-03-11 22:03:28" itemprop="dateModified" datetime="2026-03-11T22:03:28+08:00">2026-03-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>624</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>疲惫至极</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/03/10/20260310/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+            <div class="post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zwaire.github.io/2026/03/10/20260309/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ren.jpg">
-      <meta itemprop="name" content="Aray">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aray's Blog">
-      <meta itemprop="description" content="即使一无所有，也要无所畏惧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Aray's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/03/10/20260309/" class="post-title-link" itemprop="url">20260309</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2026-03-10 08:11:05 / 修改时间：08:55:52" itemprop="dateCreated datePublished" datetime="2026-03-10T08:11:05+08:00">2026-03-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>650</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>祸不单行</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/03/10/20260309/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zwaire.github.io/2026/03/09/20260308/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ren.jpg">
-      <meta itemprop="name" content="Aray">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aray's Blog">
-      <meta itemprop="description" content="即使一无所有，也要无所畏惧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Aray's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/03/09/20260308/" class="post-title-link" itemprop="url">20260308</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-03-09 00:13:05" itemprop="dateCreated datePublished" datetime="2026-03-09T00:13:05+08:00">2026-03-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-03-10 08:06:10" itemprop="dateModified" datetime="2026-03-10T08:06:10+08:00">2026-03-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>785</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>道心破碎</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/03/09/20260308/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zwaire.github.io/2026/03/08/20260307/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ren.jpg">
-      <meta itemprop="name" content="Aray">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aray's Blog">
-      <meta itemprop="description" content="即使一无所有，也要无所畏惧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Aray's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/03/08/20260307/" class="post-title-link" itemprop="url">20260307</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-03-08 00:36:41" itemprop="dateCreated datePublished" datetime="2026-03-08T00:36:41+08:00">2026-03-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-03-09 00:15:07" itemprop="dateModified" datetime="2026-03-09T00:15:07+08:00">2026-03-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>597</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="Day-Summary"><a href="#Day-Summary" class="headerlink" title="Day Summary"></a>Day Summary</h3><p>依旧补档~第一周感觉十分迅速就要过去是了，时间真的好快QAQ，下周感觉很地狱，要实习，还有补考，还有课设，希望能够或者过完下周吧。。。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/03/08/20260307/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zwaire.github.io/2026/03/07/20260306%E8%A1%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ren.jpg">
-      <meta itemprop="name" content="Aray">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aray's Blog">
-      <meta itemprop="description" content="即使一无所有，也要无所畏惧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Aray's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/03/07/20260306%E8%A1%A5/" class="post-title-link" itemprop="url">20260306补</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-03-07 09:56:18" itemprop="dateCreated datePublished" datetime="2026-03-07T09:56:18+08:00">2026-03-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-03-08 16:46:36" itemprop="dateModified" datetime="2026-03-08T16:46:36+08:00">2026-03-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="Day-Summary"><a href="#Day-Summary" class="headerlink" title="Day Summary"></a>Day Summary</h3><p>实际上写的时候已经是周六了，由于昨天实在是十分的疲惫导致已经无力去写昨天的博客了。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/03/07/20260306%E8%A1%A5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zwaire.github.io/2026/03/05/20260305/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ren.jpg">
-      <meta itemprop="name" content="Aray">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aray's Blog">
-      <meta itemprop="description" content="即使一无所有，也要无所畏惧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Aray's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/03/05/20260305/" class="post-title-link" itemprop="url">20260305</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-03-05 23:03:57" itemprop="dateCreated datePublished" datetime="2026-03-05T23:03:57+08:00">2026-03-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-03-08 16:49:39" itemprop="dateModified" datetime="2026-03-08T16:49:39+08:00">2026-03-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>从周一开始搭建自己的博客，到现在持续了快一周左右终于把一些前期的配置等内容都搞清楚了，感觉还是十分有动力去做一些事情的。这是我大学以来第一件自己真正想要去做的事情，没有学习的压力，没有老师的催促和其他的什么事情，这是一种很爽的感觉。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/03/05/20260305/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
